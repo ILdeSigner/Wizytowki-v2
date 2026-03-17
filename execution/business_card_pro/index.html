@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mPTech | Business Card PRO</title>
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- jsPDF and QRCode libraries loaded via CDN for local use -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>mPTech Business Card <span>PRO</span></h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Input Form Section -->
+        <section class="form-section">
+            <div class="section-header">
+                <h2>Opcje wizytówki</h2>
+                <div class="pro-badge">PRO PRINT</div>
+            </div>
+            <form id="card-form">
+                <!-- Personal Data -->
+                <h3>1. Dane osobowe</h3>
+                <div class="form-group">
+                    <label for="input-name">Imię i Nazwisko</label>
+                    <input type="text" id="input-name" value="Jan Kowalski">
+                </div>
+                <div class="form-group">
+                    <label for="input-title">Stanowisko</label>
+                    <input type="text" id="input-title" value="Specjalista ds. IT">
+                </div>
+                <div class="form-group">
+                    <label for="input-phone">Telefon</label>
+                    <input type="tel" id="input-phone" value="+48 123 456 789">
+                </div>
+                <div class="form-group">
+                    <label for="input-email">E-mail</label>
+                    <input type="email" id="input-email" value="j.kowalski@mptech.eu">
+                </div>
+                
+                <h3>2. Dane firmowe</h3>
+                <div class="form-group">
+                    <label for="input-address1">Adres (Linia 1)</label>
+                    <input type="text" id="input-address1" value="ul. Nowogrodzka 31">
+                </div>
+                <div class="form-group">
+                    <label for="input-address2">Adres (Linia 2)</label>
+                    <input type="text" id="input-address2" value="00-511 Warszawa">
+                </div>
+                <div class="form-group">
+                    <label for="input-nip">NIP</label>
+                    <input type="text" id="input-nip" value="123-456-78-90">
+                </div>
+
+                <h3>3. Opcje DTP</h3>
+                <div class="form-group">
+                    <label for="input-bleed">Spady (mm)</label>
+                    <input type="number" id="input-bleed" value="3" step="1" min="0" max="5">
+                    <small>Domyślnie 3mm na każdy brzeg.</small>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="uv-name" checked>
+                    <label for="uv-name">Uszlachetnij Imię i Nazwisko (Mask UV)</label>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="uv-logo" checked>
+                    <label for="uv-logo">Uszlachetnij Logo mPTech (Mask UV)</label>
+                </div>
+
+                <button type="button" id="btn-download" class="btn-primary">Generuj 4-stronicowy PDF</button>
+            </form>
+        </section>
+
+        <!-- Preview Section -->
+        <section class="preview-section">
+            <div class="preview-header">
+                <h2>Podgląd wektorowy (Live)</h2>
+                <div class="view-toggles">
+                    <button id="btn-view-front" class="active">Awers (CMYK)</button>
+                    <button id="btn-view-uv">Maska UV</button>
+                    <button id="btn-view-back">Rewers</button>
+                </div>
+                <div id="dimensions-info" class="dimensions-badge">Rozmiar ze spadem: 96x56 mm</div>
+            </div>
+            
+            <div id="svg-container" class="svg-wrapper">
+                 <!-- Generated SVG will be injected here -->
+            </div>
+            
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

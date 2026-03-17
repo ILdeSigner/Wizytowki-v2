@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mPTech | Business Card Generator</title>
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- html2pdf.js loaded via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>mPTech Business Card Creator</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Input Form Section -->
+        <section class="form-section">
+            <h2>Wprowadź dane</h2>
+            <form id="card-form">
+                <div class="form-group">
+                    <label for="input-name">Imię i Nazwisko</label>
+                    <input type="text" id="input-name" value="Jan Kowalski">
+                </div>
+                <div class="form-group">
+                    <label for="input-title">Stanowisko</label>
+                    <input type="text" id="input-title" value="Specjalista ds. IT">
+                </div>
+                <div class="form-group">
+                    <label for="input-phone">Telefon</label>
+                    <input type="tel" id="input-phone" value="+48 123 456 789">
+                </div>
+                <div class="form-group">
+                    <label for="input-email">E-mail</label>
+                    <input type="email" id="input-email" value="j.kowalski@mptech.eu">
+                </div>
+                <div class="form-group">
+                    <label for="input-website">Strona www</label>
+                    <input type="text" id="input-website" value="www.mptech.eu">
+                </div>
+                <div class="form-group">
+                    <label for="input-address">Adres</label>
+                    <input type="text" id="input-address" value="ul. Nowogrodzka 31, 00-511 Warszawa">
+                </div>
+                <button type="button" id="btn-download" class="btn-primary">Pobierz PDF (Do druku)</button>
+            </form>
+        </section>
+
+        <!-- Preview Section -->
+        <section class="preview-section">
+            <h2>Podgląd na żywo</h2>
+            
+            <div id="pdf-wrapper">
+                <!-- Front Side -->
+                <div class="business-card front" id="card-front">
+                    <div class="card-content">
+                        <!-- Placeholder text for Logo, since we don't have the SVG extracted dynamically yet -->
+                        <div class="brand-logo">
+                            <span class="logo-mp">mP</span><span class="logo-tech">Tech</span>
+                        </div>
+                        
+                        <div class="personal-info">
+                            <h3 id="preview-name">Jan Kowalski</h3>
+                            <div class="accent-line"></div>
+                            <p id="preview-title" class="title">Specjalista ds. IT</p>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <p><span class="icon">T:</span> <span id="preview-phone">+48 123 456 789</span></p>
+                            <p><span class="icon">E:</span> <span id="preview-email">j.kowalski@mptech.eu</span></p>
+                            <p><span class="icon">W:</span> <span id="preview-website">www.mptech.eu</span></p>
+                            <p><span class="icon">A:</span> <span id="preview-address">ul. Nowogrodzka 31, 00-511 Warszawa</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spacer"></div>
+
+                <!-- Back Side -->
+                <div class="business-card back" id="card-back">
+                    <div class="card-content-back">
+                        <div class="brand-logo-back">
+                            <span class="logo-mp-back">mP</span><span class="logo-tech-back">Tech</span>
+                        </div>
+                        <div class="website-back">www.mptech.eu</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

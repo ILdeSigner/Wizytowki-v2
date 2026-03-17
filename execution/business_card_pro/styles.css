@@ -1,0 +1,249 @@
+:root {
+    --primary-blue: #009FE3;
+    --primary-dark: #1D1D1B;
+    --bg-white: #FFFFFF;
+    --bg-gray: #F5F7F8;
+    --magenta-uv: #FF00FF;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-gray);
+    color: var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-dark);
+    color: var(--bg-white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-container h1 {
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.header-container h1 span {
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 40px auto;
+    gap: 40px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Form Section */
+.form-section {
+    flex: 1;
+    min-width: 340px;
+    max-width: 450px;
+    background-color: var(--bg-white);
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+}
+
+.form-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.pro-badge {
+    background-color: var(--primary-dark);
+    color: var(--bg-white);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    letter-spacing: 1px;
+}
+
+.form-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-family: var(--font-main);
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 0px; /* mPTech sharpness */
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-blue);
+}
+
+.form-group small {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-gray);
+    padding: 10px;
+    border-left: 3px solid var(--magenta-uv);
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    accent-color: var(--magenta-uv);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    border: none;
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    text-transform: uppercase;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #0081B8; 
+}
+.btn-primary:active {
+    transform: scale(0.98);
+}
+.btn-primary:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Preview Section */
+.preview-section {
+    flex: 2;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.preview-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dimensions-badge {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    background: #e0e0e0;
+    padding: 5px 10px;
+}
+
+.view-toggles {
+    display: flex;
+    background: #e0e0e0;
+    padding: 4px;
+}
+
+.view-toggles button {
+    background: transparent;
+    border: none;
+    padding: 6px 15px;
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555;
+    transition: background 0.2s;
+}
+
+.view-toggles button.active {
+    background: var(--bg-white);
+    color: var(--primary-dark);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.view-toggles button#btn-view-uv.active {
+    color: var(--magenta-uv);
+}
+
+.svg-wrapper {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.svg-wrapper svg {
+    /* Scale SVG visually on screen, independent of actual mm size inside SVG */
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+    background: var(--bg-white); /* base background for SVG container */
+}
